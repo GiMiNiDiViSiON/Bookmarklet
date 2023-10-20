@@ -1,0 +1,15 @@
+Find a "Jobs", "Careers" or "Hiring" link in the page, and click it.
+
+
+
+javascript: (() => {
+  const xpath = "//a [contains(., 'Jobs') or contains(., 'Careers') or contains(., 'Hiring')]";
+  const elements = document.evaluate(xpath, document);
+  const element = elements.iterateNext();
+    
+  if (element) {
+    element.click();
+  } else {
+    alert('No links for jobs found!');
+  }
+})();
